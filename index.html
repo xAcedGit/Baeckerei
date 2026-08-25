@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handwerksbäckerei – Frische & Tradition</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #FDFBF7;
+            --surface-color: #FFFFFF;
+            --primary-color: #3D2314;
+            --accent-color: #C87D55;
+            --accent-hover: #A6623D;
+            --text-color: #2D2623;
+            --text-muted: #6E655F;
+            --border-color: #EFE9E1;
+            --radius: 16px;
+            --shadow: 0 10px 30px rgba(61, 35, 20, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .btn-phone {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-phone:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            padding: 60px 8%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #F4EBE1;
+            color: var(--accent-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Value Props */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            padding: 40px 8%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--surface-color);
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Products Grid */
+        .products-section {
+            padding: 80px 8%;
+            max-width: 1300px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .products-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .section-sub {
+            color: var(--text-muted);
+            margin-bottom: 48px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+
+        .card {
+            background: var(--surface-color);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 24px;
+        }
+
+        .card-body h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .card-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Info Section (Hours & Address) */
+        .info-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 70px 8%;
+            margin-top: 40px;
+        }
+
+        .info-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .info-box h3 {
+            color: #F4EBE1;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #E5DCD3;
+        }
+
+        .info-list li strong {
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #27160C;
+            color: #A3968C;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 850px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 30px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero-image img {
+                height: 320px;
+            }
+
+            .info-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="#" class="logo">🥐 Bäckerei [Name]</a>
+        <a href="tel:[Telefonnummer]" class="btn-phone">📞 Anrufen</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <span class="badge">Echtes Handwerk</span>
+            <h1>Frisches Brot & Gebäck – Täglich mit Liebe gebacken.</h1>
+            <p>Besuchen Sie uns in [Stadtteil / Ort] und genießen Sie traditionelle Backkunst, knuspriges Sauerteigbrot und feinsten Kaffee.</p>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" alt="Frisches Brot">
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🌾</div>
+            <h3>100% Regionale Zutaten</h3>
+            <p>Unser Mehl beziehen wir ausschließlich aus heimischen Mühlen der Region.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⏳</div>
+            <h3>Lange Teigruhe</h3>
+            <p>Unser Sauerteig reift 24 Stunden für besten Geschmack und leichte Bekömmlichkeit.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">☕</div>
+            <h3>Kaffee & Frühstück</h3>
+            <p>Starten Sie Ihren Tag bei uns mit frischen Snacks und Kaffeespezialitäten.</p>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products-section">
+        <h2>Beliebte Spezialitäten</h2>
+        <p class="section-sub">Ein kleiner Einblick in unser tägliches Sortiment</p>
+
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=600&q=80" alt="Sauerteigbrot">
+                <div class="card-body">
+                    <h3>Hausgemachtes Landbrot</h3>
+                    <p>Knusprige Kruste, saftige Krume – nach traditionellem Rezept im Holzofen gebacken.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Croissant">
+                <div class="card-body">
+                    <h3>Butter-Croissants & Plunder</h3>
+                    <p>Jeden Morgen frisch geformt und goldbraun gebacken für Ihr perfektes Frühstück.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=600&q=80" alt="Snacks">
+                <div class="card-body">
+                    <h3>Herzhafte Snacks</h3>
+                    <p>Reichlich belegte Brötchen, Weckerl und kleine Mahlzeiten für die Mittagspause.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFO SECTION -->
+    <section class="info-section">
+        <div class="info-container">
+            <div class="info-box">
+                <h3>⏰ Öffnungszeiten</h3>
+                <ul class="info-list">
+                    <li><span>Montag – Freitag</span> <strong>06:00 – 18:00 Uhr</strong></li>
+                    <li><span>Samstag</span> <strong>06:00 – 12:30 Uhr</strong></li>
+                    <li><span>Sonn- & Feiertage</span> <strong>07:00 – 11:00 Uhr</strong></li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>📍 Standorte & Kontakt</h3>
+                <p style="color: #E5DCD3; margin-bottom: 12px;">Besuchen Sie uns direkt vor Ort:</p>
+                <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 8px;">Bäckerei [Name]</p>
+                <p style="color: #E5DCD3;">[Musterstraße 12]</p>
+                <p style="color: #E5DCD3; margin-bottom: 20px;">[12345 Musterstadt]</p>
+                <p style="color: #E5DCD3;">Tel: <strong>[0123 / 456789]</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Bäckerei [Name]. Alle Rechte vorbehalten.</p>
+    </footer>
+
+</body>
+</html>
