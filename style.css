@@ -70,7 +70,6 @@ h1, h2, h3, h4 {
 .top-banner {
     background: linear-gradient(90deg, #C87D55, #A6623D, #C87D55);
     background-size: 200% 200%;
-    animation: shimmer 6s infinite linear;
     color: white;
     text-align: center;
     padding: 10px 20px;
@@ -125,7 +124,7 @@ nav {
 }
 
 /* =========================================
-   HERO SEKTION INTERAKTIONEN
+   HERO SEKTION
    ========================================= */
 .hero {
     display: grid;
@@ -168,7 +167,7 @@ nav {
 }
 
 /* =========================================
-   FEATURES & INTERAKTIVER BACKPLAN
+   FEATURES & BACKPLAN
    ========================================= */
 .section-padding {
     padding: 80px 8%;
@@ -202,7 +201,6 @@ nav {
     box-shadow: var(--shadow-hover);
 }
 
-/* Backplan Micro-Interactions */
 .backplan-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -276,7 +274,6 @@ nav {
     -webkit-overflow-scrolling: touch;
 }
 
-/* Custom Scrollbar */
 .carousel::-webkit-scrollbar {
     height: 8px;
 }
@@ -330,7 +327,7 @@ nav {
 .card-body { padding: 28px; }
 
 /* =========================================
-   WHATSAPP BUTTON SHIMMER & ANIMATION
+   WHATSAPP SECTION
    ========================================= */
 .preorder-section {
     background: #F4EBE1;
@@ -389,7 +386,7 @@ nav {
 }
 
 /* =========================================
-   INFO, FOOTER & LEGAL
+   INFO SECTION & FOOTER
    ========================================= */
 .info-section {
     background-color: var(--primary-color);
@@ -446,23 +443,11 @@ footer {
     color: #A3968C;
     font-size: 0.85rem;
 }
+
 .footer-links a { color: #E5DCD3; text-decoration: none; margin: 0 10px; transition: color 0.2s ease; }
 .footer-links a:hover { color: var(--accent-color); }
 
-/* Legal Pages */
-.legal-container {
-    max-width: 800px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
-.legal-container h1 { margin-bottom: 20px; font-size: 2.5rem; }
-.legal-container h2 { margin-top: 40px; margin-bottom: 10px; font-size: 1.5rem; }
-.legal-container p, .legal-container ul { margin-bottom: 20px; color: var(--text-muted); }
-.legal-container a { color: var(--accent-color); text-decoration: none; font-weight: 600; }
-.back-link { display: inline-block; margin-bottom: 30px; font-weight: 600; color: var(--primary-color); text-decoration: none; transition: transform 0.2s ease; }
-.back-link:hover { transform: translateX(-5px); }
-
-/* Responsive Adjustments */
+/* Responsive */
 @media (max-width: 850px) {
     .hero, .info-container { grid-template-columns: 1fr; text-align: center; }
     .hero-text h1 { font-size: 2.5rem; }
