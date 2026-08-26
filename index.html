@@ -319,13 +319,29 @@
             color: white;
         }
 
-        /* Footer */
+        /* Legal Footer */
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 40px 20px;
             background-color: #27160C;
             color: #A3968C;
             font-size: 0.85rem;
+        }
+
+        .footer-links {
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #E5DCD3;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
         }
 
         /* Responsive Mobile */
@@ -353,10 +369,10 @@
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav>
-        <a href="#" class="logo">Bäckerei [Name]</a>
-        <a href="tel:[Telefonnummer]" class="btn-phone">Anrufen</a>
+    <!-- NAV (mit ARIA Attributes) -->
+    <nav aria-label="Hauptnavigation">
+        <a href="#" class="logo" aria-label="Zur Startseite der Bäckerei">Bäckerei [Name]</a>
+        <a href="tel:[Telefonnummer]" class="btn-phone" aria-label="Bäckerei jetzt anrufen">Anrufen</a>
     </nav>
 
     <!-- HERO -->
@@ -366,7 +382,7 @@
             <p>Besuchen Sie uns in [Stadtteil / Ort] und genießen Sie traditionelle Backkunst, knuspriges Sauerteigbrot und feinsten Kaffee.</p>
         </div>
         <div class="hero-image animate delay-2">
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" alt="Frisches Brot">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" alt="Frisch gebackenes Brot im Holzofen">
         </div>
     </section>
 
@@ -374,21 +390,21 @@
     <section class="features">
         <div class="feature-card animate delay-1">
             <div class="feature-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13 8 9"/><path d="M12 9 8 5"/><path d="M12 13l4-4"/><path d="M12 9l4-4"/><path d="M12 5V2"/></svg>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13 8 9"/><path d="M12 9 8 5"/><path d="M12 13l4-4"/><path d="M12 9l4-4"/><path d="M12 5V2"/></svg>
             </div>
             <h3>100% Regionale Zutaten</h3>
             <p>Unser Mehl beziehen wir ausschließlich aus heimischen Mühlen der Region.</p>
         </div>
         <div class="feature-card animate delay-2">
             <div class="feature-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
             <h3>Lange Teigruhe</h3>
             <p>Unser Sauerteig reift 24 Stunden für besten Geschmack und leichte Bekömmlichkeit.</p>
         </div>
         <div class="feature-card animate delay-3">
             <div class="feature-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
             </div>
             <h3>Kaffee & Frühstück</h3>
             <p>Starten Sie Ihren Tag bei uns mit frischen Snacks und Kaffeespezialitäten.</p>
@@ -403,7 +419,7 @@
         <div class="grid">
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=600&q=80" alt="Sauerteigbrot">
+                    <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=600&q=80" alt="Hausgemachtes Landbrot mit knuspriger Kruste">
                 </div>
                 <div class="card-body">
                     <h3>Hausgemachtes Landbrot</h3>
@@ -413,7 +429,7 @@
 
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Croissant">
+                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Frisch gebackene Butter-Croissants">
                 </div>
                 <div class="card-body">
                     <h3>Butter-Croissants & Plunder</h3>
@@ -423,7 +439,7 @@
 
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=600&q=80" alt="Snacks">
+                    <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=600&q=80" alt="Herzhaft belegte Brötchen und Snacks">
                 </div>
                 <div class="card-body">
                     <h3>Herzhafte Snacks</h3>
@@ -456,9 +472,13 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (Rechtssicher mit Links) -->
     <footer>
         <p>© 2026 Bäckerei [Name]. Alle Rechte vorbehalten.</p>
+        <div class="footer-links">
+            <a href="impressum.html">Impressum</a> |
+            <a href="datenschutz.html">Datenschutzerklärung</a>
+        </div>
     </footer>
 
 </body>
